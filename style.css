@@ -1,12 +1,12 @@
 #container {
   width: 400px;
-  height: 50px;
+  height: auto;
   border: 1px solid #42e2f4;
   display: none;
 }
 
-#processing_bar_1 {
+/* #processing_bar_1 {
   width: 0%;
   height: 50px;
   background-color: #42e2f4;  
-}
+} */

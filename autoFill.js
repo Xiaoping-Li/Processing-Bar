@@ -3,9 +3,12 @@ const barContainer = document.getElementById('container');
 
 const createBar = (id) => {
   const barDiv = document.createElement("div");
-  barDiv.style.width = "0%";
+  barDiv.style.width = "40%";
   barDiv.style.height = "50px";
+  barDiv.style.merge = "5px";
   barDiv.style.color = "#42e2f4";
+  barDiv.style.display = "block";
+  barDiv.style.border = "2px solid red";
   barDiv.id = "processing_bar_" + id.toString();
   return barDiv;
 }
@@ -19,7 +22,13 @@ const createProcessingBar = () => {
   }, 30);
 };
 
+let barID = 0;
+
 const clickCreate = () => {
   barContainer.style.display = "block";
-  createProcessingBar();
+  barID++;
+  const div = createBar(barID);
+  document.getElementById("container").appendChild(div);
+  console.log(document.getElementById("container").childNodes); 
+  // createProcessingBar();
 };
