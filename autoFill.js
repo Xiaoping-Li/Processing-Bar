@@ -1,5 +1,5 @@
 const barElement = document.getElementById('processing_bar_1');
-const barContainer = document.getElementsByClassName('container')[0];
+const barContainer = document.getElementById('container');
 
 const createBar = () => {
   const barDiv = document.createElement("div");
