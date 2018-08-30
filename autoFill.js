@@ -2,13 +2,13 @@ const barContainer = document.getElementById('container');
 
 const createBar = (id) => {
   const barDiv = document.createElement("div");
-  barDiv.style.width = "40%";
+  barDiv.id = "processing_bar_" + id.toString();
   barDiv.style.height = "50px";
-  barDiv.style.merge = "5px";
   barDiv.style.display = "block";
   barDiv.style.border = "1px solid red";
-  barDiv.style.background = "#42e2f4";
-  barDiv.id = "processing_bar_" + id.toString();
+
+  if (id <= 3) barDiv.style.background = "#42e2f4";
+  
   return barDiv;
 }
 
@@ -28,5 +28,5 @@ const clickCreate = () => {
   barID++;
   const div = createBar(barID);
   document.getElementById("container").appendChild(div); 
-  createProcessingBar(div);
+  if (barID <= 3) createProcessingBar(div);
 };
