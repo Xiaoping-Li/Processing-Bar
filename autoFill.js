@@ -1,4 +1,3 @@
-const barElement = document.getElementById('processing_bar_1');
 const barContainer = document.getElementById('container');
 
 const createBar = (id) => {
@@ -6,18 +5,18 @@ const createBar = (id) => {
   barDiv.style.width = "40%";
   barDiv.style.height = "50px";
   barDiv.style.merge = "5px";
-  barDiv.style.color = "#42e2f4";
   barDiv.style.display = "block";
-  barDiv.style.border = "2px solid red";
+  barDiv.style.border = "1px solid red";
+  barDiv.style.background = "#42e2f4";
   barDiv.id = "processing_bar_" + id.toString();
   return barDiv;
 }
 
-const createProcessingBar = () => {
+const createProcessingBar = (element) => {
   let completed = 0;
   let index = setInterval(function() {
     completed++;
-    barElement.style.width = completed.toString() + '%';
+    element.style.width = completed.toString() + '%';
     if (completed === 100) clearInterval(index);
   }, 30);
 };
@@ -28,7 +27,6 @@ const clickCreate = () => {
   barContainer.style.display = "block";
   barID++;
   const div = createBar(barID);
-  document.getElementById("container").appendChild(div);
-  console.log(document.getElementById("container").childNodes); 
-  // createProcessingBar();
+  document.getElementById("container").appendChild(div); 
+  createProcessingBar(div);
 };
