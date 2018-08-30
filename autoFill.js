@@ -6,7 +6,7 @@ const createBar = (id) => {
   barDiv.style.height = "50px";
   barDiv.style.display = "block";
   barDiv.style.border = "1px solid red";
-
+  barDiv.innerHTML = "Loading...";
   if (id <= 3) barDiv.style.background = "#42e2f4";
   
   return barDiv;
@@ -17,7 +17,10 @@ const createProcessingBar = (element) => {
   let index = setInterval(function() {
     completed++;
     element.style.width = completed.toString() + '%';
-    if (completed === 100) clearInterval(index);
+    if (completed === 100) {
+      element.innerHTML = "Completed";
+      clearInterval(index);
+    }   
   }, 30);
 };
 
