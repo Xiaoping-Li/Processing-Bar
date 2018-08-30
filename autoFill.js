@@ -1,6 +1,14 @@
 const barElement = document.getElementById('processing_bar_1');
 const barContainer = document.getElementsByClassName('container')[0];
 
+const createBar = () => {
+  const barDiv = document.createElement("div");
+  barDiv.style.width = "0%";
+  barDiv.style.height = "50px";
+  barDiv.style.color = "#42e2f4";
+  return barDiv;
+}
+
 const createProcessingBar = () => {
   let completed = 0;
   let index = setInterval(function() {
