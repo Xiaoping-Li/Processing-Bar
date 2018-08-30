@@ -5,9 +5,8 @@
   display: none;
 }
 
-.processing_bar {
+#processing_bar_1 {
   width: 0%;
   height: 50px;
-  background-color: #42e2f4;
-  
+  background-color: #42e2f4;  
 }

@@ -1,4 +1,4 @@
-const barElement = document.getElementsByClassName('processing_bar')[0];
+const barElement = document.getElementById('processing_bar_1');
 const barContainer = document.getElementsByClassName('container')[0];
 
 const createProcessingBar = () => {
